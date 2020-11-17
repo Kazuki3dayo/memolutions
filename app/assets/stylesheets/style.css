@@ -88,8 +88,9 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 1.0em;
   color: #808080;
+  border: 1px #808080 solid;
   text-decoration: none;
   user-select: none;
 }
