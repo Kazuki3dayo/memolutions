@@ -24,8 +24,8 @@
 | amount           | integer    |                                |
 | user             | references | null: false, foreign_key: true |
 | category_id      | integer    | null: false                    |
-| store_id         | integer    | null: false                    |
-| genre_id         | integer    | null: false                    |
+| store_id         | integer    |                                |
+| genre_id         | integer    |                                |
 | when_id          | integer    | null: false                    |
 
 ### Association
