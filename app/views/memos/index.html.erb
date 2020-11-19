@@ -5,7 +5,7 @@
         こんにちは、
         <%#<%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
-        今日は11月19日(木)  現在時刻は○時○分です。
+        今日は11月19日(木) です。
       </div>
     <% end %>
     <%#<div class="card__wrapper">
@@ -17,7 +17,7 @@
     <% if user_signed_in? %>
       <% @memos.each do |memo| %>
       <li class='list'>
-        <%= link_to "#", method: :get do %>  <%# ここのパスは後ほど確認する %>
+        <%= link_to memo_path(memo.id), method: :get do %>  <%# ここのパスは後ほど確認する %>
         <div class='item-img-content'>
           <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
         </div>

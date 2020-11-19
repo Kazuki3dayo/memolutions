@@ -1,0 +1,41 @@
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @memo.category.name %>
+    </h2>
+    <h2 class="name">
+      <%= @memo.title %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @memo.image ,class:"item-box-img" if @memo.image.attached? %>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @memo.text %></span>
+    </div>
+    
+    <div class="item-price-box">
+      <span class="item-price">
+        <%= "¥#{ @memo.amount }" %>
+      </span>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @memo.store.name %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @memo.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品の状態</th>
+          <td class="detail-value"><%= @memo.when.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%# /商品の概要 %>
+</div>
