@@ -1,0 +1,79 @@
+<div class="memos-create-contents">
+  <div class="memos-create-main">
+    <h2 class="memos-title">メモの情報を入力</h2>
+    <%= form_with model: @memo, url: memos_path, local: true do |f| %>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー選択
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+
+      <div class="new-items">
+        <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            内容
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"内容（1,000文字まで）例）○○薬局で○○を買って帰る" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+      </div>
+      <div class="price-content">
+        <div class="price-text">
+          <span>金額</span>
+        </div>
+        <span class="sell-yen">¥</span>
+        <%= f.text_field :amount, class:"price-input", id:"item-price", placeholder:"例）1000" %>
+      </div>
+      
+      
+      <div class="form">
+        <div class="weight-bold-text">
+          行き先
+        </div>
+        <%= f.collection_select(:store_id, Store.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <div class="weight-bold-text">
+          購入品ジャンル
+        </div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+
+      <div class="form">
+        <div class="weight-bold-text">
+          予定
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:when_id, When.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+      </div>
+
+      <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        イメージ
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "保存する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+
+    <% end %>
+  </div>
+</div>

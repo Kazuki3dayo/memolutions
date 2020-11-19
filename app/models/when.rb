@@ -1,4 +1,4 @@
-class When < ApplicationRecord
+class When < ActiveHash::Base
   self.data = [
    { id: 1, name: '--' },
    { id: 2, name: '今日' },
