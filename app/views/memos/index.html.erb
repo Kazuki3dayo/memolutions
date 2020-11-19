@@ -5,10 +5,32 @@
         こんにちは、
         <%#<%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
+        今日は11月19日(木)  現在時刻は○時○分です。
       </div>
     <% end %>
-    <div class="card__wrapper">
+    <%#<div class="card__wrapper">
       <%#<%= render partial: 'prototype', collection: @prototypes %>
     </div>
+    <div class='item-contents'>
+    <h2 class='sub-title'>メモ一覧</h2>
+    <ul class='memo-lists'>
+    <% if user_signed_in? %>
+      <% @memos.each do |memo| %>
+      <li class='list'>
+        <%= link_to "#", method: :get do %>  <%# ここのパスは後ほど確認する %>
+        <div class='item-img-content'>
+          <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= memo.title %>
+          </h3>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
   </div>
 </main>

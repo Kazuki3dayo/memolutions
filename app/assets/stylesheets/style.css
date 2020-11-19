@@ -38,7 +38,7 @@ a {
 
 .header {
   background-color: #99FFCC;
-  margin-bottom: 48px;
+  margin-bottom: 10px;
   padding: 20px 0;
 }
 
@@ -137,6 +137,11 @@ a {
 
 /* メイン */
 
+.sub-title {
+  background-color: #99FFCC;
+  padding-left: 20px;
+}
+
 .greeting{
   margin-bottom: 20px;
 }
@@ -149,6 +154,13 @@ a {
   min-height: calc(100vh - 161px);
 }
 
+.memo-lists {
+  display: flex;
+}
+
+.list {
+  margin: 10px 0 0 20px;
+}
 
 /* フッター */
 
