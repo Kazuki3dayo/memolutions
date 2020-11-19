@@ -7,13 +7,12 @@
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
       </div>
     <% end %>
-    <div class="card__wrapper">
+    <%#<div class="card__wrapper">
       <%#<%= render partial: 'prototype', collection: @prototypes %>
     </div>
     <div class='item-contents'>
-    <h2 class='title'>メモ一覧</h2>
-    <ul class='item-lists'>
-    
+    <h2 class='sub-title'>メモ一覧</h2>
+    <ul class='memo-lists'>
     <% if user_signed_in? %>
       <% @memos.each do |memo| %>
       <li class='list'>
