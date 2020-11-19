@@ -1,7 +1,7 @@
 class MemosController < ApplicationController
 
   def index
-    @memos = Memo.order("created_at DESC")
+    @memos = Memo.all.order("created_at DESC")
   end
 
   def new
