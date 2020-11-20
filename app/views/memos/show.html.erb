@@ -8,7 +8,7 @@
       <%= @memo.title %>
     </h2>
     <div class='item-img-content'>
-      <%= image_tag @memo.image ,class:"item-box-img" if @memo.image.attached? %>
+      <%= image_tag @memo.image.variant(resize: '300x300') ,class:"item-box-img" if @memo.image.attached? %>
     </div>
 
     <div class="item-explain-box">

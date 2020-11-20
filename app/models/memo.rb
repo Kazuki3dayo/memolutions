@@ -8,10 +8,16 @@ class Memo < ApplicationRecord
   belongs_to :genre
   belongs_to :when
 
-  validates :title, :text, presence: true
-  validates :amount, format: { with: /\A[0-9]+\z/, message: 'には半角数字を使用してください' }
+  validates :title, presence: true
+  validates :text, presence: { message: " or image can't be blank" }, unless: :was_attached?
+
+  def was_attached?
+    self.image.attached?
+  end
+
+  #validates :amount, format: { with: /\A[0-9]+\z/, message: 'には半角数字を使用してください' }
   validates :amount, numericality: { only_integer: true, message: 'is invalid. Input half-width characters.' }
   validates :amount, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 999_999, message: 'は¥0〜¥999,999の範囲内で入力してください' }
 
-  validates :category_id, :when_id, numericality: { other_than: 1, message: 'の詳細情報を選択してください' }
+  validates :category_id, :when_id, numericality: { other_than: 1, message: 'を選択してください' }
 end

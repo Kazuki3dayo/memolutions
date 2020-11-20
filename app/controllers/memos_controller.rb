@@ -6,6 +6,7 @@ class MemosController < ApplicationController
 
   def new
     @memo = Memo.new
+    @memo.amount = 0
   end
 
   def create

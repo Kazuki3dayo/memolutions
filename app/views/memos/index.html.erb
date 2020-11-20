@@ -19,7 +19,7 @@
       <li class='list'>
         <%= link_to memo_path(memo.id), method: :get do %>  <%# ここのパスは後ほど確認する %>
         <div class='item-img-content'>
-          <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
+          <%= image_tag memo.image.variant(resize: '150x200'), class: "item-img" if memo.image.attached? %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
