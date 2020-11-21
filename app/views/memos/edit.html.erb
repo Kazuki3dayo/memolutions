@@ -2,7 +2,7 @@
   <h2 class="memos-title">メモの情報を入力</h2>
   <div class="memos-create-main">
     
-    <%= form_with model: @memo, url: memos_path, local: true do |f| %>
+    <%= form_with model: @memo, url: memo_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 

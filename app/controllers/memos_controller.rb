@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memo, only: [:edit, :show]
+  before_action :set_memo, only: [:edit, :show, :update]
 
   def index
     @memos = Memo.all.order("created_at DESC")
@@ -23,6 +23,14 @@ class MemosController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @memo.update(memo_params)
+      redirect_to memo_path
+    else
+      render :edit
+    end
   end
 
   private
