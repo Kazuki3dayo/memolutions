@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+  before_action :set_memo, only: [:edit, :show]
 
   def index
     @memos = Memo.all.order("created_at DESC")
@@ -19,12 +20,18 @@ class MemosController < ApplicationController
   end
 
   def show
-    @memo = Memo.find(params[:id])
+  end
+
+  def edit
   end
 
   private
 
   def memo_params
     params.require(:memo).permit(:image, :title, :text, :amount, :category_id, :store_id, :genre_id, :when_id).merge(user_id: current_user.id)
+  end
+
+  def set_memo
+    @memo = Memo.find(params[:id])
   end
 end

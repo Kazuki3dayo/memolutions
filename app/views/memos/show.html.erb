@@ -31,11 +31,13 @@
           <td class="detail-value"><%= @memo.genre.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">いつまでに</th>
           <td class="detail-value"><%= @memo.when.name %></td>
         </tr>
       </tbody>
     </table>
   </div>
   <%# /商品の概要 %>
+
+  <%= link_to '商品の編集', edit_memo_path, method: :get, class: "item-red-btn" %>
 </div>
