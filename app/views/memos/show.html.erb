@@ -39,5 +39,6 @@
   </div>
   <%# /商品の概要 %>
 
-  <%= link_to '商品の編集', edit_memo_path, method: :get, class: "item-red-btn" %>
+  <%= link_to 'メモの編集', edit_memo_path, method: :get, class: "item-red-btn" %>
+  <%= link_to 'メモの削除', memo_path, method: :delete, class:'item-destroy' %>
 </div>

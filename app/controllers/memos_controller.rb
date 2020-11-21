@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memo, only: [:edit, :show, :update]
+  before_action :set_memo, only: [:edit, :show, :update, :destroy]
 
   def index
     @memos = Memo.all.order("created_at DESC")
@@ -30,6 +30,13 @@ class MemosController < ApplicationController
       redirect_to memo_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if current_user.id == @memo.user_id
+      @memo.destroy
+      redirect_to root_path
     end
   end
 
