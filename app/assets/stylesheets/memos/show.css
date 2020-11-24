@@ -1,12 +1,128 @@
-
-
-.memo-category-show {
+.memos-shows-contents {
+  background-image: url("/images/memo_back6.png");
+  /* height: 100vw; */
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
 
+.memo-show {
+  width: 300px;
+  padding-top: 50px;
+}
+
+.memo-box {
+  width: 300px;
+  border: #000000 1px solid;
+  background-color: #FFFFFF;
+}
+
+.memo-category-show {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.memo-title-show {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.memo-text-box {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border-top: #000000 1px solid;
+  border-bottom: #000000 1px solid;
+}
+
+.text-nil {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border-top: #000000 1px solid;
+  border-bottom: #000000 1px solid;
+}
+
+.memo-amount-box {
+  display: flex;
+  padding-top: 5px;
+  margin: 10px 0;
+}
+
+.memo-store-box {
+  display: flex;
+  margin: 10px 0;
+}
+
+.memo-genre-box {
+  display: flex;
+  margin: 10px 0;
+}
+
+.memo-when-box {
+  display: flex;
+  margin: 10px 0;
+}
+
+.detail-memo {
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  border-right: #000000 1px solid;
+}
+
+.detail-value {
+  width: 50%;
+  height: 30px;
+  padding-left: 20px;
+}
+
+
+/* 下部ボタン */
+.memo-btn-show {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.memo-edit-btn {
+  font-size: 15px;
+  padding: 5px 15px;
+  background-color: #78FF94;
+  border: #000000 1px solid;
+}
+
+.memo-destroy {
+  font-size: 15px;
+  background-color: #DDDDDD;
+  padding: 5px 15px;
+  border: #000000 1px solid;
+}
+
+/* イメージ */
+.memo-img-show {
+  width: 46vh;
+  height: 46vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 50px;
+  background-color: #FFFFFF;
+}
 
 .memo-box-img {
-  width: 33vh;
-  height: 33vh;
+  width: 45vh;
+  height: 45vh;
+}
+
+.image-nil {
+  width: 46vh;
+  height: 46vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 50px;
+  background-color: #FFFFFF;
 }

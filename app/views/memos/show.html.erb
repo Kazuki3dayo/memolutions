@@ -1,51 +1,89 @@
 <%# メモの内容 %>
-<div class="memo-show">
-  <div class="memo-box">
-
-    <div class='memo-category-show'>
-      <h2 class="name">
-        <%= @memo.category.name %>
-      </h2>
-    </div>
-
-    <div class='memo-title-show'>
-      <h2 class="name">
-        <%= @memo.title %>
-      </h2>
-    </div>
-
-    <div class='memo-img-content'>
-      <%= image_tag @memo.image.variant(resize: '300x300') ,class:"memo-box-img" if @memo.image.attached? %>
-    </div>
-
-    <div class="item-explain-box">
-      <span><%= @memo.text %></span>
-    </div>
+<h2 class="memos-title">メモの詳細情報</h2>
+<div class="memos-shows-contents">
+  
+  <div class="memo-show">
     
-    <div class="item-price-box">
-      <span class="item-price">
-        <%= "¥#{ @memo.amount }" %>
-      </span>
-    </div>
+    <div class="memo-box">
 
-    <div class="item-explain-box">
-      <span><%= @memo.store.name %></span>
+      <div class='memo-category-show'>
+        <h2 class="name">
+          <%= @memo.category.name %>
+        </h2>
+      </div>
+
+      <div class='memo-title-show'>
+        <h2 class="name">
+          <%= @memo.title %>
+        </h2>
+      </div>
+
+      <% if @memo.text != "" %>
+        <div class="memo-text-box">
+          <span><%= @memo.text %></span>
+        </div>
+      <% else %>
+        <span class="text-nil">
+          <%= "メモの内容は入力されていません" %>
+        </span>
+      <% end %>
+    
+      <div class="memo-amount-box">
+        <div class='detail-memo'>
+        必要金額
+        </div>
+        <span class="detail-value">
+          <%= "¥#{ @memo.amount }" %>
+        </span>
+      </div>
+
+      <div class="memo-store-box">
+        <div class='detail-memo'>
+          行き先
+        </div>
+        <span class="detail-value">
+          <%= @memo.store.name %>
+        </span>
+      </div>
+
+      <div class="memo-genre-box">
+        <div class='detail-memo'>
+          購入品ジャンル
+        </div>
+        <span class="detail-value">
+          <%= @memo.genre.name %>
+        </span>
+      </div>
+
+      <div class="memo-when-box">
+        <div class='detail-memo'>
+          いつまでに
+        </div>
+        <span class="detail-value">
+          <%= @memo.when.name %>
+        </span>
+      </div>
+
     </div>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @memo.genre.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">いつまでに</th>
-          <td class="detail-value"><%= @memo.when.name %></td>
-        </tr>
-      </tbody>
-    </table>
+    <%# /メモの内容 %>
+
+    <%# 下部ボタン %>
+    <div class="memo-btn-show">
+      <%= link_to 'メモの編集', edit_memo_path, method: :get, class: "memo-edit-btn" %>
+      <%= link_to 'メモの削除', memo_path, method: :delete, class:'memo-destroy' %>
+    </div>
+    <%# /下部ボタン %>
   </div>
-  <%# /メモの内容 %>
 
-  <%= link_to 'メモの編集', edit_memo_path, method: :get, class: "item-red-btn" %>
-  <%= link_to 'メモの削除', memo_path, method: :delete, class:'item-destroy' %>
+    <%# イメージ %>
+    <% if @memo.image != nil %>
+    <div class='memo-img-show'>
+      <%= image_tag @memo.image,class:"memo-box-img" if @memo.image.attached? %>
+    </div>
+    <% else %>
+    <div class='image-nil'>
+      <%= 'イメージは保存されていません' %>
+    </div>
+    <% end %>
+    <%# /イメージ %>
 </div>

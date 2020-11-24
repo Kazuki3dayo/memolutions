@@ -148,6 +148,12 @@ a {
   cursor: pointer;
 }
 
+.memo-btn-contents {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
 /* メイン */
 .greeting{
   margin-bottom: 20px;
