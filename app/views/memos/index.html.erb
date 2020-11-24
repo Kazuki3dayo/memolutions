@@ -25,7 +25,7 @@
       </div>
     <% end %>
 
-    <div class='item-contents'>
+    <div class='memo-contents'>
       <ul class='memo-lists'>
         <% if user_signed_in? %>
           <% @memos.each do |memo| %>
@@ -37,7 +37,7 @@
               </div>
               <%= link_to memo_path(memo.id), method: :get do %>
               <div class='memo-img-content'>
-                <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
+                <%= image_tag memo.image, class: "memo-img" if memo.image.attached? %>
               </div>
               <div class='memo-info'>
                 <h3 class='memo-name'>
