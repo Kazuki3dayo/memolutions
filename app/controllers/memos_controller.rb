@@ -3,7 +3,10 @@ class MemosController < ApplicationController
 
   def index
     @today = Date.today
-    @memos = Memo.all.order("created_at DESC")
+    @time = Time.now
+    if user_signed_in?
+    @memos = Memo.where(user_id: current_user.id).order("created_at DESC")
+    end
   end
 
   def new

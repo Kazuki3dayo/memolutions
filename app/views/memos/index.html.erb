@@ -1,14 +1,28 @@
 <main class="main">
   <div class="inner">
-    <% if user_signed_in? %>
+    
       <div class="greeting">
-        こんにちは、
+      <% if @time.hour >= 5 && @time.hour <= 10 %>
+        おはようございます
+      <% elsif @time.hour >= 11 && @time.hour <= 16 %>
+        こんにちは
+      <% else %>
+        こんばんは
+      <% end %>
+
+        <% if user_signed_in? %>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
-        <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>
+        <% end %>
+        <div class='nav-today'>
+          <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>
+        </div>
       </div>
+        
+      
     
     <%#<div class="card__wrapper">
       <%#<%= render partial: 'prototype', collection: @prototypes %>
+    <% if user_signed_in? %>
     </div>
     <div class='sub-title'>
     <%= "#{current_user.nick_name}さんのメモ一覧"%>

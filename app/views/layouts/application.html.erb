@@ -16,6 +16,7 @@
           <div class="nav__left">
             <h2><%= link_to "MemoLution", root_path, class: :title %></h2>
           </div>
+
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
