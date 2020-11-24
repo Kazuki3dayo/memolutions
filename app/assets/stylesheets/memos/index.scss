@@ -1,4 +1,10 @@
-.item-contents {
+.main {
+  
+}
+
+.memo-contents {
+  background-image: url("/images/memo_back6.png");
+  background-size: cover;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -45,7 +51,7 @@
   position: relative;
 }
 
-.item-img {
+.memo-img {
   width: 33vh;
   height: 33vh;
 }
