@@ -13,7 +13,7 @@
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
 
-      <div class="new-items">
+      <div class="new-memos">
         <div class="weight-bold-text">
           タイトル
           <span class="indispensable">必須</span>
@@ -26,11 +26,11 @@
           <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"内容（1,000文字まで）例）○○薬局で○○を買って帰る" ,rows:"7" ,maxlength:"1000" %>
         </div>
       </div>
-      <div class="price-content">
-        <div class="price-text">
+      <div class="amount-content">
+        <div class="amount-text">
           <span>金額</span>
         </div>
-        <span class="sell-yen">¥</span>
+        <span class="amount-yen">¥</span>
         <%= f.text_field :amount, class:"price-input", id:"item-price", placeholder:"例）1000" %>
       </div>
       
@@ -66,7 +66,7 @@
 
     <%# 下部ボタン %>
     <div class="memo-btn-contents">
-      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%= f.submit "変更する" ,class:"memo-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>

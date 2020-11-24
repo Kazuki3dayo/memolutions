@@ -69,6 +69,13 @@ a {
   justify-content: space-between;
 }
 
+.nav__left {
+}
+
+.nav-today {
+  margin-top: 10px;
+}
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -100,13 +107,6 @@ a {
 }
 
 /* フォーム周り */
-.memos-title {
-  padding: 0 0 0 100px;
-}
-
-.memos-create-contents {
-  justify-content: center;
-}
 
 .memos-create-main {
   display: flex;
@@ -148,21 +148,7 @@ a {
   cursor: pointer;
 }
 
-.img-upload {
-
-}
-
-.memo-btn-contents {
-
-}
-
 /* メイン */
-
-.sub-title {
-  background-color: #99FFCC;
-  padding-left: 20px;
-}
-
 .greeting{
   margin-bottom: 20px;
 }
@@ -173,25 +159,6 @@ a {
   justify-content: space-between;
   align-items: center;
   min-height: calc(100vh - 161px);
-}
-
-/* .item-img-content {
-  width: 200px;
-  height: 200px;
-}
-
-.item-img {
-  justify-content: center;
-  align-items: center;
-} */
-
-.memo-lists {
-  display: flex;
-}
-
-.list {
-  margin: 10px 0 0 20px;
-  border: #000000 1px solid;
 }
 
 /* フッター */

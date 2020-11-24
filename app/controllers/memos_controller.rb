@@ -2,7 +2,11 @@ class MemosController < ApplicationController
   before_action :set_memo, only: [:edit, :show, :update, :destroy]
 
   def index
-    @memos = Memo.all.order("created_at DESC")
+    @today = Date.today
+    @time = Time.now
+    if user_signed_in?
+    @memos = Memo.where(user_id: current_user.id).order("created_at DESC")
+    end
   end
 
   def new
