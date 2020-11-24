@@ -1,7 +1,7 @@
 <main class="main">
   <div class="inner">
     
-      <div class="greeting">
+    <div class="greeting">
       <% if @time.hour >= 5 && @time.hour <= 10 %>
         おはようございます
       <% elsif @time.hour >= 11 && @time.hour <= 16 %>
@@ -10,53 +10,50 @@
         こんばんは
       <% end %>
 
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
-        <% end %>
-        <div class='nav-today'>
-          <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>
-        </div>
-      </div>
-        
-      
-    
-    <%#<div class="card__wrapper">
-      <%#<%= render partial: 'prototype', collection: @prototypes %>
-    <% if user_signed_in? %>
-    </div>
-    <div class='sub-title'>
-    <%= "#{current_user.nick_name}さんのメモ一覧"%>
-    </div>
-    <% end %>
-    <div class='item-contents'>
-    
-    <ul class='memo-lists'>
-    <% if user_signed_in? %>
-      <% @memos.each do |memo| %>
-      <li class='list'>
-        <div class='memo-info'>
-          <h3 class="memo-category">
-            <%= memo.category.name %>
-          </h3>
-        </div>
-        <%= link_to memo_path(memo.id), method: :get do %>
-        <div class='memo-img-content'>
-          <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
-        </div>
-        <div class='memo-info'>
-          <h3 class='memo-name'>
-            <%= memo.title %>
-          </h3>
-          <h4 class='memo-amount'>
-            必要金額
-            <%= "¥ #{memo.amount}" %>
-          </h4>
-        </div>
-        <% end %>
-      </li>
       <% end %>
+      <div class='nav-today'>
+        <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>
+      </div>
+    </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class='sub-title'>
+        <%= "#{current_user.nick_name}さんのメモ一覧"%>
+      </div>
     <% end %>
-    </ul>
-  </div>
+
+    <div class='item-contents'>
+      <ul class='memo-lists'>
+        <% if user_signed_in? %>
+          <% @memos.each do |memo| %>
+            <li class='list'>
+              <div class='memo-info'>
+                <h3 class="memo-category">
+                  <%= memo.category.name %>
+                </h3>
+              </div>
+              <%= link_to memo_path(memo.id), method: :get do %>
+              <div class='memo-img-content'>
+                <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
+              </div>
+              <div class='memo-info'>
+                <h3 class='memo-name'>
+                  <%= memo.title %>
+                </h3>
+                <h4 class='memo-amount'>
+                  必要金額
+                  <%= "¥ #{memo.amount}" %>
+                </h4>
+              </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+
   </div>
 </main>

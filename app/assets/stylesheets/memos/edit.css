@@ -1,0 +1,11 @@
+.memos-update-contents {
+  background-image: url("/images/memo_back2.jpeg");
+  /* height: 850px; */
+  background-size: cover;
+}
+
+.edit-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}

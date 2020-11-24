@@ -4,10 +4,9 @@
     
     <%= form_with model: @memo, url: memos_path, local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
 
       <div class="form">
-
         <%# カテゴリー選択%>
         <div class="memo-category-select">
           <div class="weight-bold-text">
@@ -20,85 +19,85 @@
         </div>
         <%# //カテゴリー選択%>
 
-      <div class="new-memos">
-        <div class="weight-bold-text">
-          メモタイトル
-          <span class="indispensable">必須</span>
-        </div>
-        <div class='memo-title'>
-        <%= f.text_area :title, class:"title-text", id:"item-name", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
-        </div>
-        <div class="memos-explain">
+        <div class="new-memos">
           <div class="weight-bold-text">
-            メモ内容
+            メモタイトル
+            <span class="indispensable">必須</span>
           </div>
-          <div class='memos-text'>
-          <%= f.text_area :text, class:"memo-text", id:"item-info", placeholder:"内容（1,000文字まで）例）○○薬局で○○を買って帰る" ,rows:"7" ,maxlength:"1000" %>
+          <div class='memo-title'>
+            <%= f.text_area :title, class:"title-text", id:"item-name", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+          </div>
+          <div class="memos-explain">
+            <div class="weight-bold-text">
+              メモ内容
+            </div>
+            <div class='memos-text'>
+              <%= f.text_area :text, class:"memo-text", id:"item-info", placeholder:"内容（1,000文字まで）例）○○薬局で○○を買って帰る" ,rows:"7" ,maxlength:"1000" %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="amount-content">
-        <div class="amount-text">
-          <span>必要金額</span>
+
+        <div class="amount-content">
+          <div class="amount-text">
+            <span>必要金額</span>
+          </div>
+          <div class='amount-input'>
+            <span class='amount-yen'>¥</span>
+            <%= f.text_field :amount, class:"price-input", id:"memo-amount", placeholder:"例）1000" %>
+          </div>
         </div>
-        <div class='amount-input'>
-        <span class='amount-yen'>¥</span>
-        <%= f.text_field :amount, class:"price-input", id:"memo-amount", placeholder:"例）1000" %>
-        </div>
-      </div>
       
         <div class='memo-store'>
-        <div class="weight-bold-text">
-          行き先
-        </div>
-        <div class='memo-select'>
-        <%= f.collection_select(:store_id, Store.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-        </div>
+          <div class="weight-bold-text">
+            行き先
+          </div>
+          <div class='memo-select'>
+            <%= f.collection_select(:store_id, Store.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+          </div>
         </div>
 
         <div class='memo-genre'>
-        <div class="weight-bold-text">
-          購入品ジャンル
-        </div>
-        <div class='memo-select'>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-        </div>
+          <div class="weight-bold-text">
+            購入品ジャンル
+          </div>
+          <div class='memo-select'>
+            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+          </div>
         </div>
 
         <div class='memo-when'>
-        <div class="weight-bold-text">
-          予定
-          <span class="indispensable">必須</span>
-        </div>
-        <div class='memo-select'>
-        <%= f.collection_select(:when_id, When.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
-        </div>
+          <div class="weight-bold-text">
+            予定
+            <span class="indispensable">必須</span>
+          </div>
+          <div class='memo-select'>
+            <%= f.collection_select(:when_id, When.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+          </div>
         </div>
       </div>
 
       <%# 画像添付 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        イメージ
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <div class='img-select'>
-        <%= f.file_field :image, id:"item-image" %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          イメージ
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <div class='img-select'>
+            <%= f.file_field :image, id:"item-image" %>
+          </div>
         </div>
       </div>
-    </div>
-    <%# /画像添付 %>
+      <%# /画像添付 %>
 
-    <%# 下部ボタン %>
-    <div class="memo-btn-contents">
-      <%= f.submit "保存する" ,class:"memo-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
-    
+      <%# 下部ボタン %>
+      <div class="memo-btn-contents">
+        <%= f.submit "保存する" ,class:"memo-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
 
     <% end %>
   </div>
