@@ -1,0 +1,55 @@
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.sub-title {
+  font-size: 20px;
+  background-color: #99FFCC;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.memo-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;  //ボックス内の折り返し
+  justify-content: center;
+}
+
+.memo-lists>.list {
+  width: 37vh;
+  padding: 1.0vw;
+  background-color: #FFF;
+  border: #000000 1px solid;
+  margin: 5px;
+}
+
+.memo-category {
+  background-color: #FFDBC9;
+}
+
+.memo-name {
+  background-color: #C2EEFF;
+}
+
+.memo-amount {
+  background-color: #FFFFCC;
+}
+
+.memo-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.greeting__link {
+  font-size: 20px;
+}

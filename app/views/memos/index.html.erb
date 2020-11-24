@@ -3,28 +3,40 @@
     <% if user_signed_in? %>
       <div class="greeting">
         こんにちは、
-        <%#<%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
-        今日は11月19日(木) です。
+        <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>
       </div>
-    <% end %>
+    
     <%#<div class="card__wrapper">
       <%#<%= render partial: 'prototype', collection: @prototypes %>
     </div>
+    <div class='sub-title'>
+    <%= "#{current_user.nick_name}さんのメモ一覧"%>
+    </div>
+    <% end %>
     <div class='item-contents'>
-    <h2 class='sub-title'>メモ一覧</h2>
+    
     <ul class='memo-lists'>
     <% if user_signed_in? %>
       <% @memos.each do |memo| %>
       <li class='list'>
-        <%= link_to memo_path(memo.id), method: :get do %>  <%# ここのパスは後ほど確認する %>
-        <div class='item-img-content'>
-          <%= image_tag memo.image.variant(resize: '150x200'), class: "item-img" if memo.image.attached? %>
+        <div class='memo-info'>
+          <h3 class="memo-category">
+            <%= memo.category.name %>
+          </h3>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <%= link_to memo_path(memo.id), method: :get do %>
+        <div class='memo-img-content'>
+          <%= image_tag memo.image, class: "item-img" if memo.image.attached? %>
+        </div>
+        <div class='memo-info'>
+          <h3 class='memo-name'>
             <%= memo.title %>
           </h3>
+          <h4 class='memo-amount'>
+            必要金額
+            <%= "¥ #{memo.amount}" %>
+          </h4>
         </div>
         <% end %>
       </li>

@@ -2,6 +2,7 @@ class MemosController < ApplicationController
   before_action :set_memo, only: [:edit, :show, :update, :destroy]
 
   def index
+    @today = Date.today
     @memos = Memo.all.order("created_at DESC")
   end
 

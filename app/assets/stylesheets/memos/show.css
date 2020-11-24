@@ -1,0 +1,12 @@
+
+
+.memo-category-show {
+  display: flex;
+  justify-content: center;
+}
+
+
+.memo-box-img {
+  width: 33vh;
+  height: 33vh;
+}

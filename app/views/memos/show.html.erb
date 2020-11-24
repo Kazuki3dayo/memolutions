@@ -1,14 +1,21 @@
-<%# 商品の概要 %>
-<div class="item-show">
-  <div class="item-box">
-    <h2 class="name">
-      <%= @memo.category.name %>
-    </h2>
-    <h2 class="name">
-      <%= @memo.title %>
-    </h2>
-    <div class='item-img-content'>
-      <%= image_tag @memo.image.variant(resize: '300x300') ,class:"item-box-img" if @memo.image.attached? %>
+<%# メモの内容 %>
+<div class="memo-show">
+  <div class="memo-box">
+
+    <div class='memo-category-show'>
+      <h2 class="name">
+        <%= @memo.category.name %>
+      </h2>
+    </div>
+
+    <div class='memo-title-show'>
+      <h2 class="name">
+        <%= @memo.title %>
+      </h2>
+    </div>
+
+    <div class='memo-img-content'>
+      <%= image_tag @memo.image.variant(resize: '300x300') ,class:"memo-box-img" if @memo.image.attached? %>
     </div>
 
     <div class="item-explain-box">
@@ -37,7 +44,7 @@
       </tbody>
     </table>
   </div>
-  <%# /商品の概要 %>
+  <%# /メモの内容 %>
 
   <%= link_to 'メモの編集', edit_memo_path, method: :get, class: "item-red-btn" %>
   <%= link_to 'メモの削除', memo_path, method: :delete, class:'item-destroy' %>

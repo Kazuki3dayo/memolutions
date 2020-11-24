@@ -1,0 +1,122 @@
+.memos-create-contents {
+  background-image: url("/images/memo_back2.jpeg");
+  height: 850px;
+  background-size: cover;
+}
+
+.memos-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.memo-category-select {
+  margin: 10px 0;
+}
+
+.weight-bold-text {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.indispensable {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  background-color: #FF0000;
+  padding: 1px 5px;
+  margin-left: 20px;
+}
+
+.memo-select{
+  display: flex;
+  justify-content: center;
+}
+
+.select-box {
+  width: 180px;
+  height: 35px;
+  padding-left: 10px;
+}
+
+.new-memos {
+  margin: 10px 0;
+}
+
+.memo-title {
+  display: flex;
+  justify-content: center;
+}
+
+.title-text {
+  width: 200px;
+}
+
+.memos-text {
+  display: flex;
+  justify-content: center;
+}
+
+.memo-text {
+  width: 200px;
+}
+
+.amount-content {
+  margin: 10px 0;
+}
+
+.amount-text {
+  display: flex;
+  justify-content: center;
+}
+
+.amount-input {
+  display: flex;
+  justify-content: center;
+}
+
+.amount-yen {
+  margin-right: 10px;
+}
+
+.memo-store {
+  margin: 10px 0;
+}
+
+.memo-genre {
+  margin: 10px 0;
+}
+
+.memo-when {
+  margin: 10px 0;
+}
+
+.img-upload {
+  margin: 10px 0;
+}
+
+.img-select {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.memo-btn-contents {
+  margin: 40px 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.memo-btn {
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: #78FF94;
+}
+
+.back-btn {
+  background-color: #DDDDDD;
+  padding: 6px 16px;
+  border: #000000 1px solid;
+}
