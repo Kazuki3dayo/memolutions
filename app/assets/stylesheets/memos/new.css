@@ -1,6 +1,6 @@
 .memos-create-contents {
   background-image: url("/images/memo_back2.jpeg");
-  height: 850px;
+  /* height: 850px; */
   background-size: cover;
 }
 
@@ -101,12 +101,6 @@
   display: flex;
   justify-content: center;
   margin: 10px 0;
-}
-
-.memo-btn-contents {
-  margin: 40px 20px 0;
-  display: flex;
-  justify-content: space-around;
 }
 
 .memo-btn {
