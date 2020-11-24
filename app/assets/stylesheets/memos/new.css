@@ -103,6 +103,12 @@
   margin: 10px 0;
 }
 
+.memo-btn-contents {
+  margin: 40px 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
 .memo-btn {
   font-size: 15px;
   padding: 5px 10px;
