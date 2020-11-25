@@ -30,6 +30,9 @@
         <% if user_signed_in? %>
           <% @memos.each do |memo| %>
             <li class='list'>
+              <div class='create-time'>
+                <%= "#{memo.created_at.year}年#{memo.created_at.month}月#{memo.created_at.day}日 作成" %>
+              </div>
               <div class='memo-info'>
                 <h3 class="memo-category">
                   <%= memo.category.name %>
