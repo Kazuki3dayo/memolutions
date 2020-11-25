@@ -3,7 +3,14 @@
 <div class="memos-shows-contents">
   
   <div class="memo-show">
-    
+    <div class='times-show'>
+    <div class='create-time-show'>
+      <%= "#{@memo.created_at.year}年#{@memo.created_at.month}月#{@memo.created_at.day}日 作成" %>
+    </div>
+    <div class='update-time-show'>
+      <%= "#{@memo.updated_at.year}年#{@memo.updated_at.month}月#{@memo.updated_at.day}日 更新" %>
+    </div>
+  </div>
     <div class="memo-box">
 
       <div class='memo-category-show'>

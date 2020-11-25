@@ -1,5 +1,7 @@
 class MemosController < ApplicationController
-  before_action :set_memo, only: [:edit, :show, :update, :destroy]
+  before_action :set_memo, only: [:show, :edit, :update, :destroy]
+  before_action :memo_valid, only: [:show, :edit]
+  before_action :authenticate_user!, except: :index
 
   def index
     @today = Date.today
@@ -24,7 +26,6 @@ class MemosController < ApplicationController
   end
 
   def show
-    #binding.pry
   end
 
   def edit
@@ -53,5 +54,9 @@ class MemosController < ApplicationController
 
   def set_memo
     @memo = Memo.find(params[:id])
+  end
+
+  def memo_valid
+    redirect_to root_path unless @memo.user == current_user
   end
 end
