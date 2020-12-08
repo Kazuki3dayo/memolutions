@@ -10,11 +10,19 @@
       </div>
     </div>
     <div class='message-room-form__field'>
+    </div>
+    <div class='message-room-form__field'>
       <div class='message-room-form__field--left'>
-        <%= f.label :パスワード, class: 'message-room-form__label'%>
+        <label class='message-room-form__label' for='message_room_チャットメンバー'>メッセージメンバー</label>
       </div>
       <div class='message-room-form__field--right'>
-        <%= f.text_field :password_digest, class: 'message__room_name message-room-form__input', placeholder: 'パスワードを入力してください'%>
+        <select name="room[user_ids][]">
+          <option value="">チャットするユーザーを選択してください</option>
+           <% User.where.not(id: current_user.id).each do |user| %>
+           <%#一旦この行削除%>
+         <% end %>
+        </select>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
    
