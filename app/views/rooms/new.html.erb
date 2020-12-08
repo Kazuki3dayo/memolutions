@@ -1,1 +1,28 @@
-<h1>ルーム作成ページ</h1>
+<div class='message-room-form'>
+  <h1>メッセージルーム作成ページ</h1>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class='message-room-form__field'>
+      <div class='message-room-form__field--left'>
+        <%= f.label :ルーム名, class: 'message-room-form__label'%>
+      </div>
+      <div class='message-room-form__field--right'>
+        <%= f.text_field :name, class: 'message__room_name message-room-form__input', placeholder: 'ルーム名を入力してください'%>
+      </div>
+    </div>
+    <div class='message-room-form__field'>
+      <div class='message-room-form__field--left'>
+        <%= f.label :パスワード, class: 'message-room-form__label'%>
+      </div>
+      <div class='message-room-form__field--right'>
+        <%= f.text_field :password_digest, class: 'message__room_name message-room-form__input', placeholder: 'パスワードを入力してください'%>
+      </div>
+    </div>
+   
+    <div class='message-room-form__field'>
+      <div class='message-room-form__field--left'></div>
+      <div class='message-room-form__field--right'>
+        <%= f.submit class: 'message-room-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>

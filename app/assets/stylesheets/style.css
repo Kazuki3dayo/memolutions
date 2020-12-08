@@ -74,6 +74,7 @@ a {
 
 .nav-today {
   margin-top: 10px;
+  display: flex;
 }
 
 .nav__btn{
