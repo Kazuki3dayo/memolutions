@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: "memos#index"
   resources :memos
-  resources :rooms, only: [:index, :new, :create, :destroy]
+  resources :rooms, only: [:index, :new, :create, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
 end
