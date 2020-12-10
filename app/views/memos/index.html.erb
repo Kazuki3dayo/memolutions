@@ -12,6 +12,9 @@
 
       <% if user_signed_in? %>
         <%= link_to "#{current_user.nick_name}さん", root_path, class: :greeting__link%>
+        <div class='room-create'>
+          <%= link_to "メッセージルーム作成", new_room_path, class: :room_link%>
+        </div>
       <% end %>
       <div class='nav-today'>
         <%= "今日は#{@today.year}年#{@today.month}月#{@today.day}日 #{%w(日 月 火 水 木 金 土)[@today.wday]}曜日です。 本日の予定を確認してください。" %>

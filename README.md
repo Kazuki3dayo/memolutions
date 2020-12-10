@@ -81,9 +81,10 @@ password: abc123
 
 ## roomsテーブル
 
-| Column  | Type    | Options     |
-| ------  | ------  | ----------- |
-| name    | string  | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------  | ----------- |
+| name            | string  | null: false |
+| password_digest | string  | null: false |
 
 ### Association
 
